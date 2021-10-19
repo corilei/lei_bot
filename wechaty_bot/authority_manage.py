@@ -32,6 +32,7 @@ async def add_whitelist(msg: Message):
             whitelist = global_config.get_raw('lei_bot_function', 'whitelist').split(',')
             if name in whitelist:
                 await msg.say('磊：' + name + '已在白名单中！')
+                return
             whitelist_str = global_config.get_raw('lei_bot_function', 'whitelist')
             new_whitelist_str = whitelist_str + ',' + name
             global_config.set('lei_bot_function', 'whitelist', new_whitelist_str)
@@ -49,6 +50,7 @@ async def delete_whitelist(msg: Message):
             whitelist = global_config.get_raw('lei_bot_function', 'whitelist').split(',')
             if name not in whitelist:
                 await msg.say('磊：' + name + ' 不在白名单中！')
+                return
             whitelist.remove(name)
             new_whitelist_str = ','.join(whitelist)
             global_config.set('lei_bot_function', 'whitelist', new_whitelist_str)
