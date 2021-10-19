@@ -20,7 +20,7 @@ async def good_morning_and_medicine(msg: Message):
             morning_end_time = '12:00'
             current_time = (datetime.now() - timedelta(hours=15)).strftime("%H:%M")
             if morning_begin_time < current_time < morning_end_time:
-                await msg.say("机器人磊磊：早安吃药！")
+                await msg.say("磊：早安吃药！")
 
 
 async def good_night_and_sweet_dreams(msg: Message):
@@ -28,7 +28,7 @@ async def good_night_and_sweet_dreams(msg: Message):
     if good_night_and_sweet_dreams_enable != 'true':
         return
     if '晚安' in msg.text():
-        await msg.say("机器人磊磊：今日份好梦：")
+        await msg.say("磊：今日份好梦：")
         await msg.say("老婆好梦呢！")
 
         file_box = FileBox.from_url(

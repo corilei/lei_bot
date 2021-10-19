@@ -28,6 +28,7 @@ from wechaty import get_logger
 
 from wechaty_bot.authority_manage import is_permission
 from wechaty_bot.bot_setting import bot_setting
+from wechaty_bot.utils.say import lei_say
 
 os.environ['WECHATY_PUPPET'] = "wechaty-puppet-service"
 os.environ['WECHATY_PUPPET_SERVICE_TOKEN'] = "corilei_8888"
@@ -112,7 +113,7 @@ async def code_spider(bot):
         msg = query_dynamic(uid)
         if msg:
             contact = await bot.Contact.find('程磊')
-            await contact.say("机器人磊磊：{}".format(msg))
+            await contact.say("磊：{}".format(msg))
 
 
 if __name__ == "__main__":
